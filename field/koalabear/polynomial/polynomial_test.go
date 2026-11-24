@@ -208,6 +208,10 @@ func TestPolynomialText(t *testing.T) {
 	p := Polynomial{one, negTwo, one}
 
 	assert.Equal(t, "X² - 2X + 1", p.Text(10))
+
+	var c koalabear.Element
+	c.SetUint64(1024)
+	assert.Equal(t, "10000000000×X + 10000000000", Polynomial{c, c}.Text(2))
 }
 
 func TestPrecomputeLagrange(t *testing.T) {

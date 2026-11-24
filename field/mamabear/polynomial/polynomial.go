@@ -188,11 +188,10 @@ func (p Polynomial) Text(base int) string {
 			builder.WriteString(pDText)
 		}
 
-		if builder.Len()-initialLen > 10 {
-			builder.WriteString("×")
-		}
-
 		if d != 0 {
+			if builder.Len()-initialLen > 10 {
+				builder.WriteString("×")
+			}
 			builder.WriteString("X")
 		}
 		if d > 1 {
